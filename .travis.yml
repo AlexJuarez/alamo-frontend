@@ -1,0 +1,38 @@
+sudo: false
+language: node_js
+dist: xenial
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+
+notifications:
+  email:
+    on_failure: change
+
+node_js:
+  - '10'
+
+services:
+  - xvfb
+
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - npm i -g npm
+  - npm install
+
+before_script:
+  - npm prune
+
+script:
+  - npm run build:prd
+  - npm run test
+
+after_success: 
+  - npm run test:coveralls
+  - npm run test:coveralls:push

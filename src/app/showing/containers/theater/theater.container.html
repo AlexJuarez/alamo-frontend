@@ -1,0 +1,7 @@
+<div class="panel-title">Find A Movie</div>
+<div class="panel-section">
+    <div class="panel-section-subtitle">Select Theater</div>
+    <div class="theater-links">
+        <a href ng-repeat="theater in $ctrl.theaters" class="theater-link" ui-sref="panel.theater({slug: theater.slug, name: theater.name})">{{theater.name}}</a>
+    </div>
+</div>

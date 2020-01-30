@@ -1,0 +1,41 @@
+.film-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.film-link {
+  position: relative;
+  display: block;
+  border: 1px solid #090909;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: futura-pt, sans-serif;
+  font-size: 22px;
+  line-height: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 24px;
+  margin: 16px 0;
+  color: #0d0d0d;
+  vertical-align: text-top;
+
+  .cart-icon {
+    position: absolute;
+    right: 15px;
+    display: inline-block;
+    svg path{
+      fill: rgba(9, 9, 9, 0.6);
+    }
+  }
+
+  &:hover .cart-icon svg path {
+    fill: #F0B323;
+  }
+
+  &:hover {
+    background-color: #090909;
+    color: #F0B323;
+    text-decoration: none;
+  }
+}
